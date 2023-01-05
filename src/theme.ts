@@ -1,8 +1,8 @@
-import { defaultTheme } from "@xstyled/styled-components"
-import type { DefaultTheme } from "@xstyled/styled-components"
+import { defaultTheme } from '@xstyled/styled-components'
+import type { DefaultTheme } from '@xstyled/styled-components'
 
 const theme: DefaultTheme = {
-	...defaultTheme,
+  ...defaultTheme,
 }
 
 export default theme

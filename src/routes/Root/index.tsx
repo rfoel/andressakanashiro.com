@@ -1,13 +1,14 @@
 import { x } from '@xstyled/styled-components'
-
-import LoftNeighborhoodPage from './loft-neighborhood-page.jpg'
-import GeekieStudyPlan from './geekie-study-plan.jpg'
-import PicPayLoggedPayment from './picpay-logged-payment.jpg'
-import Contact from './contact.jpg'
-import PicPayEcommerceCheckout from './picpay-ecommerce-checkout.jpg'
-import { Link, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
 import ScrollDown from '../../components/ScrollDown'
+
+import Contact from './contact.jpg'
+import GeekieStudyPlan from './geekie-study-plan.jpg'
+import LoftNeighborhoodPage from './loft-neighborhood-page.jpg'
+import PicPayEcommerceCheckout from './picpay-ecommerce-checkout.jpg'
+import PicPayLoggedPayment from './picpay-logged-payment.jpg'
 
 export const path = '/'
 

@@ -1,10 +1,10 @@
 import { SystemProps, Theme, x } from '@xstyled/styled-components'
 
-import Heading from '../../../components/Heading'
 import Box from '../../../components/Box'
+import Heading from '../../../components/Heading'
 import Text from '../../../components/Text'
-import Title from '../../../components/Title'
 import createThumbnail from '../../../components/Thumbnail'
+import Title from '../../../components/Title'
 
 import Image1 from './1.jpg'
 import Image2 from './2.jpg'

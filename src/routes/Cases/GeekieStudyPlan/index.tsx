@@ -1,16 +1,16 @@
 import { SystemProps, Theme, x } from '@xstyled/styled-components'
+import { PropsWithChildren } from 'react'
 
-import Heading from '../../../components/Heading'
 import Box from '../../../components/Box'
+import Heading from '../../../components/Heading'
 import Text from '../../../components/Text'
-import Title from '../../../components/Title'
 import createThumbnail from '../../../components/Thumbnail'
+import Title from '../../../components/Title'
 
 import Image1 from './1.jpg'
 import Image2 from './2.jpg'
 import Image3 from './3.jpg'
 import Image4 from './4.jpg'
-import { PropsWithChildren } from 'react'
 
 export const path = '/geekie-study-plan'
 

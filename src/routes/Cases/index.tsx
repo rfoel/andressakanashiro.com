@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom'
 
-import * as LoftNeighborhoodPage from './LoftNeighborhoodPage'
-import * as GeekieStudyPlan from './GeekieStudyPlan'
-import * as PicPayLoggedPayment from './PicPayLoggedPayment'
-import * as PicPayEcommerceCheckout from './PicPayEcommerceCheckout'
-
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+
+import * as GeekieStudyPlan from './GeekieStudyPlan'
+import * as LoftNeighborhoodPage from './LoftNeighborhoodPage'
+import * as PicPayEcommerceCheckout from './PicPayEcommerceCheckout'
+import * as PicPayLoggedPayment from './PicPayLoggedPayment'
 
 export const path = '/'
 
