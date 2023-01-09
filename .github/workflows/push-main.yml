@@ -19,7 +19,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
@@ -40,7 +40,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
@@ -62,7 +62,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
@@ -71,47 +71,3 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  build:
-    needs: [lint, typecheck]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v3
-
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
-
-      - name: 🏗 Build
-        run: npm run build
-
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    permissions:
-      actions: write
-      contents: read
-      pages: write
-      id-token: write
-
-    steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-
-      - name: 🚀 Production Deploy
-        uses: actions/deploy-pages@v1
