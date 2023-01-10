@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/rfoel/andressakanashiro.com/compare/v1.0.1...v1.1.0) (2023-01-10)
+
+
+### Features
+
+* add pages functions ([4d5b792](https://github.com/rfoel/andressakanashiro.com/commit/4d5b7925f1f8d4762da06c0e862953ed8d9c43f0))
+
 ## [1.0.1](https://github.com/rfoel/andressakanashiro.com/compare/v1.0.0...v1.0.1) (2023-01-10)
 
 
