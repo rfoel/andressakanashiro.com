@@ -8,9 +8,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
   const key = formData.get('key')
   const location = formData.get('location')
 
+  return new Response(JSON.stringify({ key, value, location }))
+
   if (typeof key === 'string') {
     const value = await env.KV.get(key)
-    console.log(key, value, location)
     if (key === value && location)
       return new Response(null, { status: 301, headers: { location } })
   }
