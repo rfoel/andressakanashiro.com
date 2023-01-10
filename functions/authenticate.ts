@@ -3,7 +3,7 @@ interface Env {
   KV: KVNamespace
 }
 
-export const onPostRequest: PagesFunction<Env> = async ({ env, request }) => {
+export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
   const formData = await request.formData()
   const key = formData.get('key')
   const location = formData.get('location')
