@@ -15,6 +15,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   console.log({ cookie })
   const body = new FormData()
   body.append('password', 'senha')
+  body.append('location', request.url)
   return fetch('/authenticate', { method: 'post', body })
 }
 
