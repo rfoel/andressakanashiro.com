@@ -14,7 +14,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
       const token = crypto.randomUUID()
       await env.KV.put(token, 'token')
       return new Response(null, {
-        status: 301,
+        status: 302,
         headers: {
           Location: location,
           'Set-Cookie': `__token=${token}; secure; HttpOnly; SameSite=Strict`,
@@ -24,7 +24,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
   }
 
   return new Response(null, {
-    status: 301,
+    status: 302,
     headers: { Location: '/pass' },
   })
 }
