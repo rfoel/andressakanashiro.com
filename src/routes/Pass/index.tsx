@@ -19,23 +19,9 @@ export const loader: LoaderFunction = async ({ request }) => {
     return redirect(url.searchParams.get('location') || '/')
   }
 
-  return redirect(`/pass?${url.searchParams.toString()}`)
+  if (password) {
+    return redirect(`/pass?${url.searchParams.toString()}`)
+  }
+
+  return redirect('/')
 }
-
-// const Element = () => {
-//   const [searchParams] = useSearchParams()
-
-//   const password = window.prompt('What is the password?')
-//   const formData = new FormData()
-//   formData.append('password', password || '')
-//   formData.append('location', searchParams.get('location') || '/')
-//   fetch('/authenticate', {
-//     credentials: 'include',
-//     method: 'post',
-//     body: formData,
-//   })
-
-//   return null
-// }
-
-// export const element = <Element />
