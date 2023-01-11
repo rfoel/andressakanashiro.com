@@ -18,7 +18,7 @@ import * as PicPayLoggedPayment from './PicPayLoggedPayment'
 export const path = '/'
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const cookie = request.headers.get('cookie')
+  const cookie = request.headers.get('Cookie')
 
   console.log({ cookie })
 
