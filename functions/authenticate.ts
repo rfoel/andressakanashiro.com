@@ -30,6 +30,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
 
   return new Response(null, {
     status: 301,
-    headers: { Location: `${location}?retry=${+new Date()}` },
+    headers: { Location: location },
   })
 }
