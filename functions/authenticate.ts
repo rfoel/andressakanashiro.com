@@ -29,7 +29,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
   }
 
   return new Response(null, {
-    status: 302,
+    status: 301,
     headers: { Location: `${location}?retry` },
   })
 }
