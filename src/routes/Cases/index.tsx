@@ -1,4 +1,4 @@
-import { LoaderFunction, Outlet } from 'react-router-dom'
+import { json, LoaderFunction, Outlet, redirect } from 'react-router-dom'
 
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
@@ -10,9 +10,15 @@ import * as PicPayLoggedPayment from './PicPayLoggedPayment'
 
 export const path = '/'
 
-export const loader: LoaderFunction = ({ request }) => {
+export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url)
-  return fetch(`/validate?location=${url.pathname}`)
+  const { authenticated } = await fetch('/validate').then((response) =>
+    response.json(),
+  )
+
+  if (authenticated) return json({})
+
+  return redirect(`/pass?location=${url.pathname}`)
 }
 
 function Element() {

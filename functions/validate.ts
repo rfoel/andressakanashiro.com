@@ -5,7 +5,6 @@ interface Env {
 }
 
 export const onRequestGet: PagesFunction<Env> = async ({ env, request }) => {
-  const url = new URL(request.url)
   const cookies = request.headers.get('cookie')
   const token = cookies
     ?.split(';')
@@ -15,19 +14,17 @@ export const onRequestGet: PagesFunction<Env> = async ({ env, request }) => {
   if (typeof token === 'string' && token.length) {
     const value = await env.KV.get(token)
     if (value) {
-      return new Response(null, {
-        status: 301,
+      return new Response(JSON.stringify({ authenticated: true }), {
         headers: {
-          Location: url.searchParams.get('location'),
+          'Content-Type': 'application/json',
         },
       })
     }
   }
 
-  return new Response(null, {
-    status: 301,
+  return new Response(JSON.stringify({ authenticated: false }), {
     headers: {
-      Location: `/pass?${url.searchParams.toString()}`,
+      'Content-Type': 'application/json',
     },
   })
 }
