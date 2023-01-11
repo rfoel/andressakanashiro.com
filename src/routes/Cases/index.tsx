@@ -21,9 +21,15 @@ import * as PicPayLoggedPayment from './PicPayLoggedPayment'
 export const path = '/'
 
 export const loader: LoaderFunction = async () => {
-  const token = Cookies.get('__token') || ''
+  const token = Cookies.get('__token')
+
+  if (typeof token !== 'string') {
+    return redirect('/')
+  }
+
   const body = new FormData()
   body.append('token', token)
+
   return fetch('/validate', { method: 'post' })
 }
 
