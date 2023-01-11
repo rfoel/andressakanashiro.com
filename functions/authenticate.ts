@@ -8,7 +8,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
   const password = formData.get('password')
   const location = formData.get('location')
 
-  if (typeof password === 'string') {
+  if (typeof password === 'string' && password) {
     const value = await env.KV.get(password)
     if (value) {
       const token = crypto.randomUUID()
