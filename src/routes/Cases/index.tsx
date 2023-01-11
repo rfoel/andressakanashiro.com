@@ -5,7 +5,6 @@ import {
   json,
   LoaderFunction,
   Outlet,
-  redirect,
   useFetcher,
   useLoaderData,
   useLocation,
@@ -34,32 +33,22 @@ export const loader: LoaderFunction = async () => {
   return fetch('/validate', { method: 'post' })
 }
 
-export const action: ActionFunction = async ({ request }) => {
-  const formData = await request.formData()
-  const password = formData.get('password')
-
-  if (typeof password !== 'string') {
-    return json({ authenticated: false })
-  }
-
-  formData.append('location', request.url)
-  return fetch('/authenticate', { method: 'post', body: formData })
-}
-
 function Element() {
   const loaderData = useLoaderData() as { authenticated?: boolean }
   const fetcher = useFetcher()
+  const location = useLocation()
 
   useEffect(() => {
     if (!loaderData?.authenticated) {
       const password = window.prompt('What is the password?')
       const formData = new FormData()
       formData.append('password', password || '')
-      fetcher.submit(formData, { method: 'post' })
+      formData.append('location', location.pathname)
+      fetcher.submit(formData, { action: '/authenticate', method: 'post' })
     }
-  }, [fetcher, loaderData?.authenticated])
+  }, [fetcher, loaderData?.authenticated, location.pathname])
 
-  if (!loaderData?.authenticated) return null
+  if (!loaderData?.authenticated || fetcher.state !== 'idle') return null
 
   return (
     <>
