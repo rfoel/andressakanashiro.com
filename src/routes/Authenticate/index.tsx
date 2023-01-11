@@ -15,8 +15,4 @@ export const loader: LoaderFunction = ({ request }) => {
   })
 }
 
-// function Element() {
-//   useEffect(() => {}, [])
-
-//   return null
-// }
+export const element = null
