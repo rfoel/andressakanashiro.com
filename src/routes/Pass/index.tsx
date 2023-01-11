@@ -1,16 +1,25 @@
-import { LoaderFunction } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export const path = '/pass'
 
-export const loader: LoaderFunction = ({ request }) => {
-  const url = new URL(request.url)
-  const password = window.prompt('What is the password?')
-  const formData = new FormData()
-  formData.append('password', password || '')
-  formData.append('location', url.searchParams.get('location') || '/')
-  return fetch('/authenticate', {
-    credentials: 'include',
-    method: 'post',
-    body: formData,
-  })
+const Element = () => {
+  const location = useLocation()
+  const searchParams = useSearchParams()
+  console.log({ location, searchParams })
+  useEffect(() => {
+    const password = window.prompt('What is the password?')
+    const formData = new FormData()
+    formData.append('password', password || '')
+    formData.append('location', '/')
+    fetch('/authenticate', {
+      credentials: 'include',
+      method: 'post',
+      body: formData,
+    })
+  }, [])
+
+  return null
 }
+
+export const element = <Element />
