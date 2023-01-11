@@ -3,13 +3,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import * as Authenticate from './routes/Authenticate'
 import * as Cases from './routes/Cases'
+import * as Pass from './routes/Pass'
 import * as Root from './routes/Root'
 import theme from './theme'
 import './main.css'
 
-const router = createBrowserRouter([Authenticate, Root, Cases])
+const router = createBrowserRouter([Root, Cases, Pass])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
