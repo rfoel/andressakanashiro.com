@@ -1,21 +1,36 @@
-import { useSearchParams } from 'react-router-dom'
+import { LoaderFunction } from 'react-router-dom'
 
 export const path = '/pass'
 
-const Element = () => {
-  const [searchParams] = useSearchParams()
+export const loader: LoaderFunction = ({ request }) => {
+  const url = new URL(request.url)
 
   const password = window.prompt('What is the password?')
   const formData = new FormData()
   formData.append('password', password || '')
-  formData.append('location', searchParams.get('location') || '/')
-  fetch('/authenticate', {
+  formData.append('location', url.searchParams.get('location') || '/')
+
+  return fetch('/authenticate', {
     credentials: 'include',
     method: 'post',
     body: formData,
   })
-
-  return null
 }
 
-export const element = <Element />
+// const Element = () => {
+//   const [searchParams] = useSearchParams()
+
+//   const password = window.prompt('What is the password?')
+//   const formData = new FormData()
+//   formData.append('password', password || '')
+//   formData.append('location', searchParams.get('location') || '/')
+//   fetch('/authenticate', {
+//     credentials: 'include',
+//     method: 'post',
+//     body: formData,
+//   })
+
+//   return null
+// }
+
+// export const element = <Element />
