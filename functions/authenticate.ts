@@ -17,7 +17,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
         status: 302,
         headers: {
           Location: location,
-          'Set-Cookie': `__session=${token}; secure; HttpOnly; SameSite=Strict`,
+          'Set-Cookie': `__token=${token}; secure; HttpOnly; SameSite=Strict`,
         },
       })
     }
