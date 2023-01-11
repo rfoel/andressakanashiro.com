@@ -31,7 +31,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const body = new FormData()
   body.append('token', token)
 
-  return fetch('/validate', { method: 'post' })
+  return fetch('/validate', { credentials: 'same-origin', method: 'post' })
 }
 
 function Element() {
@@ -44,7 +44,11 @@ function Element() {
       const formData = new FormData()
       formData.append('password', password || '')
       formData.append('location', location.pathname)
-      fetch('/authenticate', { method: 'post', body: formData })
+      fetch('/authenticate', {
+        credentials: 'same-origin',
+        method: 'post',
+        body: formData,
+      })
     }
   }, [loaderData?.authenticated, location.pathname])
 
