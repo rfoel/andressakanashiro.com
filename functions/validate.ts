@@ -17,7 +17,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
     }
   }
 
-  return new Response(JSON.stringify({ authenticated: true }), {
+  return new Response(JSON.stringify({ authenticated: false }), {
     status: 403,
     headers: { 'Content-Type': 'application/json' },
   })

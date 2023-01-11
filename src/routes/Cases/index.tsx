@@ -21,6 +21,8 @@ export const path = '/'
 export const loader: LoaderFunction = async () => {
   const token = Cookies.get('__token')
 
+  console.log({ token })
+
   if (typeof token !== 'string') {
     return json({ authenticated: false })
   }
