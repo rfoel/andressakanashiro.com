@@ -17,21 +17,8 @@ import * as PicPayLoggedPayment from './PicPayLoggedPayment'
 
 export const path = '/'
 
-export const loader: LoaderFunction = async ({ request }) => {
-  const cookie = request.headers.get('Cookie')
-
-  console.log({ cookie })
-
-  const token = 'x'
-
-  if (typeof token !== 'string') {
-    return json({ authenticated: false })
-  }
-
-  const body = new FormData()
-  body.append('token', token)
-
-  return fetch('/validate', { credentials: 'include', method: 'post' })
+export const loader: LoaderFunction = () => {
+  return fetch('/validate', { method: 'post' })
 }
 
 function Element() {
