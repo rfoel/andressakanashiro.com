@@ -14,12 +14,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
   if (typeof token === 'string' && token.length) {
     const value = await env.KV.get(token)
     if (value) {
-      return new Response(
-        JSON.stringify({ authenticated: true, token, cookies }),
-        {
-          headers: { 'Content-Type': 'application/json' },
-        },
-      )
+      return new Response(JSON.stringify({ authenticated: true }), {
+        headers: { 'Content-Type': 'application/json' },
+      })
     }
   }
 
