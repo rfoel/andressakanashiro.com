@@ -16,8 +16,8 @@ export const onRequestGet: PagesFunction<Env> = async ({ env, request }) => {
     const value = await env.KV.get(token)
     if (value) {
       return new Response(null, {
+        status: 301,
         headers: {
-          'Content-Type': 'application/json',
           Location: url.searchParams.get('location'),
         },
       })
@@ -27,8 +27,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ env, request }) => {
   return new Response(null, {
     status: 301,
     headers: {
-      'Content-Type': 'application/json',
-      Location: `/authenticate?location=${url.pathname}`,
+      Location: `/authenticate?location=${url.searchParams.get('location')}`,
     },
   })
 }

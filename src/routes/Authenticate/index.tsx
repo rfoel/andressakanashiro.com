@@ -7,8 +7,8 @@ export const loader: LoaderFunction = ({ request }) => {
   const password = window.prompt('What is the password?')
   const formData = new FormData()
   formData.append('password', password || '')
-  formData.append('location', url.searchParams.get('location') || '')
-  fetch('/authenticate', {
+  formData.append('location', url.searchParams.get('location') || '/')
+  return fetch('/authenticate', {
     credentials: 'include',
     method: 'post',
     body: formData,
