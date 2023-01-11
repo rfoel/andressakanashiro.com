@@ -13,23 +13,17 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
     if (value) {
       const token = crypto.randomUUID()
       await env.KV.put(token, 'token')
-      return new Response(
-        JSON.stringify({
-          authenticated: true,
-          cookies: request.headers.get('cookie'),
-        }),
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Set-Cookie': `__token=${token}; secure; HttpOnly; SameSite=Strict`,
-          },
+      return new Response(null, {
+        headers: {
+          Location: location,
+          'Set-Cookie': `__token=${token}; secure; HttpOnly; SameSite=Strict`,
         },
-      )
+      })
     }
   }
 
   return new Response(null, {
     status: 301,
-    headers: { Location: location },
+    headers: { Location: '/authenticate' },
   })
 }
