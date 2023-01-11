@@ -1,11 +1,9 @@
 import Cookies from 'js-cookie'
 import { useEffect } from 'react'
 import {
-  ActionFunction,
   json,
   LoaderFunction,
   Outlet,
-  useFetcher,
   useLoaderData,
   useLocation,
 } from 'react-router-dom'
@@ -35,7 +33,6 @@ export const loader: LoaderFunction = async () => {
 
 function Element() {
   const loaderData = useLoaderData() as { authenticated?: boolean }
-  const fetcher = useFetcher()
   const location = useLocation()
 
   useEffect(() => {
@@ -44,11 +41,11 @@ function Element() {
       const formData = new FormData()
       formData.append('password', password || '')
       formData.append('location', location.pathname)
-      fetcher.submit(formData, { action: '/authenticate', method: 'post' })
+      fetch('/authenticate', { method: 'post' })
     }
-  }, [fetcher, loaderData?.authenticated, location.pathname])
+  }, [loaderData?.authenticated, location.pathname])
 
-  if (!loaderData?.authenticated || fetcher.state !== 'idle') return null
+  if (!loaderData?.authenticated) return null
 
   return (
     <>
