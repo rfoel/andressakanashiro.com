@@ -27,7 +27,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ env, request }) => {
   return new Response(null, {
     status: 301,
     headers: {
-      Location: `/authenticate?location=${url.searchParams.get('location')}`,
+      Location: `/authenticate?${url.searchParams.toString()}`,
     },
   })
 }
