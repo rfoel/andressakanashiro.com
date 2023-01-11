@@ -1,6 +1,6 @@
 import { LoaderFunction } from 'react-router-dom'
 
-export const path = '/authenticate'
+export const path = '/pass'
 
 export const loader: LoaderFunction = ({ request }) => {
   const url = new URL(request.url)
