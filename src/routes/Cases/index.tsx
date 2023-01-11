@@ -2,6 +2,7 @@ import Cookies from 'js-cookie'
 import { useEffect } from 'react'
 import {
   ActionFunction,
+  json,
   LoaderFunction,
   Outlet,
   redirect,
@@ -24,7 +25,7 @@ export const loader: LoaderFunction = async () => {
   const token = Cookies.get('__token')
 
   if (typeof token !== 'string') {
-    return redirect('/')
+    return json({ authenticated: false })
   }
 
   const body = new FormData()
@@ -38,7 +39,7 @@ export const action: ActionFunction = async ({ request }) => {
   const password = formData.get('password')
 
   if (typeof password !== 'string') {
-    return redirect('/')
+    return json({ authenticated: false })
   }
 
   formData.append('location', request.url)
