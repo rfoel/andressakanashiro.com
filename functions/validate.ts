@@ -5,15 +5,21 @@ interface Env {
 }
 
 export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
-  const formData = await request.formData()
-  const token = formData.get('token')
+  const cookies = request.headers.get('cookie')
+  const token = cookies
+    ?.split(';')
+    ?.find((cookie) => cookie.includes('__token'))
+    ?.split('=')?.[1]
 
-  if (typeof token === 'string') {
+  if (typeof token === 'string' && token.length) {
     const value = await env.KV.get(token)
     if (value) {
-      return new Response(JSON.stringify({ authenticated: true }), {
-        headers: { 'Content-Type': 'application/json' },
-      })
+      return new Response(
+        JSON.stringify({ authenticated: true, token, cookies }),
+        {
+          headers: { 'Content-Type': 'application/json' },
+        },
+      )
     }
   }
 
