@@ -41,7 +41,7 @@ function Element() {
       const formData = new FormData()
       formData.append('password', password || '')
       formData.append('location', location.pathname)
-      fetch('/authenticate', { method: 'post' })
+      fetch('/authenticate', { method: 'post', body: formData })
     }
   }, [loaderData?.authenticated, location.pathname])
 
