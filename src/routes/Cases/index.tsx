@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import {
-  json,
   LoaderFunction,
   Outlet,
   useLoaderData,

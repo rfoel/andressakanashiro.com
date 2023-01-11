@@ -28,5 +28,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
     }
   }
 
-  return new Response(null, { status: 302, headers: { Location: location } })
+  return new Response(null, {
+    status: 302,
+    headers: { Location: `${location}?retry` },
+  })
 }
