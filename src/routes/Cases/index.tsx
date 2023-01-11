@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie'
 import { useEffect } from 'react'
 import {
   json,
@@ -18,10 +17,12 @@ import * as PicPayLoggedPayment from './PicPayLoggedPayment'
 
 export const path = '/'
 
-export const loader: LoaderFunction = async () => {
-  const token = Cookies.get('__token')
+export const loader: LoaderFunction = async ({ request }) => {
+  const cookie = request.headers.get('cookie')
 
-  console.log({ token })
+  console.log({ cookie })
+
+  const token = 'x'
 
   if (typeof token !== 'string') {
     return json({ authenticated: false })
