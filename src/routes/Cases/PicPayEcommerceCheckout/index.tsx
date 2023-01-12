@@ -21,7 +21,7 @@ export const Thumbnail = (props: SystemProps<Theme>) =>
 
 function Element() {
   return (
-    <x.div padding={{ xs: '80px', md: '120px' }}>
+    <x.div padding={{ xs: '20px', md: '120px' }}>
       <Box maxWidth='1268px' margin='0 auto'>
         <x.img marginBottom='80px' src={Image1} width='100%' />
 

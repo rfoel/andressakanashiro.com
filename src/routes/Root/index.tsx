@@ -37,7 +37,7 @@ function Element() {
         color='#FFFFFF'
         display='flex'
         minHeight='100vh'
-        padding={{ xs: '80px', md: '120px' }}
+        padding={{ xs: '20px', md: '120px' }}
         position='relative'
       >
         <x.div
@@ -61,7 +61,7 @@ function Element() {
         </x.div>
         <ScrollDown />
       </x.div>
-      <x.div id='works' padding={{ xs: '80px', md: '120px' }}>
+      <x.div id='works' padding={{ xs: '20px', md: '120px' }}>
         <x.div
           display='flex'
           flexWrap='wrap'
@@ -229,7 +229,7 @@ function Element() {
       <x.div
         backgroundColor='#171616'
         color='#FFFFFF'
-        padding={{ xs: '80px', md: '120px' }}
+        padding={{ xs: '20px', md: '120px' }}
       >
         <x.div maxWidth='1268px' margin='0 auto'>
           <x.h1 fontSize='32px' fontWeight='900' marginBottom='48px'>
