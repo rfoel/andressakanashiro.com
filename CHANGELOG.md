@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.0...v1.1.1) (2023-01-12)
+
+
+### Bug Fixes
+
+* decrease padding ([c73c506](https://github.com/rfoel/andressakanashiro.com/commit/c73c5067cd07cd4efcf34ce976958033b4305827))
+
 # [1.1.0](https://github.com/rfoel/andressakanashiro.com/compare/v1.0.1...v1.1.0) (2023-01-10)
 
 
