@@ -97,9 +97,10 @@ function Element() {
             >
               Neighborhood Page
             </x.h1>
-            <x.p color='#676666'>
-              Loft is a real state digital platform created in 2018 to simplify
-              the process of selling and buying proprieties
+            <x.p color='#676666' lineHeight='150%'>
+              Get to know the neighborhood where you want to live is primordial
+              to buy a home. That is one of the reasons why I built over 800
+              pages.
             </x.p>
           </x.div>
           <x.div
@@ -126,7 +127,7 @@ function Element() {
             >
               Study Plan
             </x.h1>
-            <x.p color='#676666'>
+            <x.p color='#676666' lineHeight='150%'>
               Geekie One represents the evolution of didactic material and
               technology to bring together everything needed to evolve
               pedagogical needs
@@ -151,7 +152,7 @@ function Element() {
             >
               Logged Payment
             </x.h1>
-            <x.p color='#676666'>
+            <x.p color='#676666' lineHeight='150%'>
               PicPay is a financial company that allows users to pay digitally
               for products and services
             </x.p>
@@ -184,7 +185,9 @@ function Element() {
             >
               E-commerce Checkout
             </x.h1>
-            <x.p color='#676666'>PicPay Case</x.p>
+            <x.p color='#676666' lineHeight='150%'>
+              PicPay Case
+            </x.p>
           </x.div>
           <x.div
             id='contact'
@@ -201,7 +204,7 @@ function Element() {
             >
               Let's grab a coffee!
             </x.h1>
-            <x.p color='#676666'>
+            <x.p color='#676666' lineHeight='150%'>
               E-mail me on{' '}
               <x.a
                 color='inherit'
@@ -271,13 +274,18 @@ function Element() {
                 This is how I design to cover the good and bad scenarios
               </x.h1>
               <x.hr
-                borderColor='#676666'
+                borderColor='#FFFFFF'
                 borderStyle='dashed'
                 borderWidth='1px'
                 marginBottom='35px'
                 maxWidth='50%'
               />
-              <x.p fontSize='14px' marginBottom='52px' minHeight='83px'>
+              <x.p
+                fontSize='14px'
+                marginBottom='52px'
+                minHeight='83px'
+                lineHeight='150%'
+              >
                 This and many more articles released on my Medium. Note that
                 many may be in Portuguese only.
               </x.p>
@@ -324,7 +332,12 @@ function Element() {
                 marginBottom='35px'
                 maxWidth='50%'
               />
-              <x.p fontSize='14px' marginBottom='52px' minHeight='83px'>
+              <x.p
+                fontSize='14px'
+                marginBottom='52px'
+                minHeight='83px'
+                lineHeight='150%'
+              >
                 Get to know my work with graphic design, 3D design and much more
               </x.p>
               <x.p fontSize='14px'>Check out</x.p>
@@ -370,7 +383,12 @@ function Element() {
                 marginBottom='35px'
                 maxWidth='50%'
               />
-              <x.p fontSize='14px' marginBottom='52px' minHeight='83px'>
+              <x.p
+                fontSize='14px'
+                marginBottom='52px'
+                minHeight='83px'
+                lineHeight='150%'
+              >
                 For me, UX means to transform everyone's dreams into something
                 tangible based on real data.
               </x.p>
