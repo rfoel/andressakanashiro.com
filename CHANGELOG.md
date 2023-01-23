@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.1...v1.1.2) (2023-01-23)
+
+
+### Bug Fixes
+
+* update copy ([c63f4c3](https://github.com/rfoel/andressakanashiro.com/commit/c63f4c3b69611a2f2d0eedb80176e5f3578919f0))
+
 ## [1.1.1](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.0...v1.1.1) (2023-01-12)
 
 
