@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.3...v1.1.4) (2023-01-23)
+
+
+### Bug Fixes
+
+* build legacy ([eb70d62](https://github.com/rfoel/andressakanashiro.com/commit/eb70d6209598ee77abe826644eb7d68c023487c0))
+
 ## [1.1.3](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.2...v1.1.3) (2023-01-23)
 
 
