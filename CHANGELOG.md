@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.4...v1.1.5) (2023-01-23)
+
+
+### Bug Fixes
+
+* remove .at notation ([0f0abf5](https://github.com/rfoel/andressakanashiro.com/commit/0f0abf52f25c595f967a74e8206a866672b8559f))
+
 ## [1.1.4](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.3...v1.1.4) (2023-01-23)
 
 
