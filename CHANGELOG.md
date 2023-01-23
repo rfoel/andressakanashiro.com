@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.2...v1.1.3) (2023-01-23)
+
+
+### Bug Fixes
+
+* build for es2015 ([e46f7b7](https://github.com/rfoel/andressakanashiro.com/commit/e46f7b7afab07fb7d4740e9c670b3b62a3217396))
+
 ## [1.1.2](https://github.com/rfoel/andressakanashiro.com/compare/v1.1.1...v1.1.2) (2023-01-23)
 
 
