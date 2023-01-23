@@ -21,10 +21,9 @@ function Footer() {
   const location = useLocation()
 
   const currentIndex = cases.findIndex((c) => c.path === location.pathname)
-  const Prev = cases.at(currentIndex - 1)?.Thumbnail
-  const Next = cases.at(
-    currentIndex + 1 >= cases.length ? 0 : currentIndex + 1,
-  )?.Thumbnail
+  const Prev = cases[currentIndex - 1]?.Thumbnail
+  const Next =
+    cases[currentIndex + 1 >= cases.length ? 0 : currentIndex + 1]?.Thumbnail
 
   return (
     <x.footer
