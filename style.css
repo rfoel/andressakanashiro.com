@@ -344,6 +344,14 @@
   margin-left: 15px;
 }
 
+.medium-btn {
+  background-color: #191919;
+}
+
+.medium-btn:hover .arrow {
+  margin-left: 15px;
+}
+
 /* Hover effects */
 .button:hover {
   opacity: 0.8;
